@@ -19,6 +19,8 @@ class IndepInfoTabWidget : public QTabWidget {
     UserInfoDisplay *userAccuOutNetInfo;
     UserInfoDisplay *userRedisDuplicateInfo;
     UserInfoDisplay *userPlcaIndepLogInfo;
+    UserInfoDisplay *hostCmdInfo;
+
 };
 
 #endif // INDEPINFOTABWIDGET_H

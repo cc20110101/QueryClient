@@ -12,6 +12,7 @@ IndepInfoTabWidget::IndepInfoTabWidget(QWidget *parent) :
     userRedisDuplicateInfo = new UserInfoDisplay(User_Redis_Indep_Display);
     userPlcaIndepLogInfo = new UserInfoDisplay(User_Indep_Log_Display);
     userBalanInfo = new UserInfoDisplay(User_Balance_Display);
+    hostCmdInfo = new UserInfoDisplay(Host_Cmd_Display);
 
     addTab(userMemInfo, "用户资料信息");
     addTab(userAccuInfo, "用户累积量信息");
@@ -23,4 +24,6 @@ IndepInfoTabWidget::IndepInfoTabWidget(QWidget *parent) :
     addTab(userRedisDuplicateInfo, "用户信控REDIS信息");
     addTab(userPlcaIndepLogInfo, "用户信控日志信息");
     addTab(userOrderInfo, "用户信控工单信息");
+    addTab(hostCmdInfo, "主机命令执行信息");
+
 }

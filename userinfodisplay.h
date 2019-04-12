@@ -16,16 +16,20 @@
 #include <QJsonDocument>
 #include <QDateTimeEdit>
 #include <QComboBox>
+#include <QPlainTextEdit>
 #include "define.h"
 #include "natsclient.h"
 
 class UserInfoDisplay : public QWidget {
     Q_OBJECT
-  public:
+public:
     explicit UserInfoDisplay(int flag = 0, QWidget *parent = nullptr);
     ~UserInfoDisplay();
 
-  private:
+protected:
+    bool eventFilter(QObject *target, QEvent *event);
+
+private:
     QLabel *m_lbQueryTime;
     QLabel *m_lbServId;
     QLabel *m_lbAcctId;
@@ -39,6 +43,7 @@ class UserInfoDisplay : public QWidget {
     QPushButton *m_pbReSet;
     QPushButton *m_pbClear;
     QTextBrowser *m_tbDisplay;
+    QPlainTextEdit *m_pTextEdit;
     QDateTimeEdit *m_dteStartTime;
     QDateTimeEdit *m_dteStopTime;
     QComboBox *m_cbActionId;
@@ -76,17 +81,22 @@ class UserInfoDisplay : public QWidget {
     bool m_bAppendStr;
     QMap<int, QString> ActionId;
     QMap<int, QString> OrgId;
+    QVector<QString> Host;
 
-  private:
+private:
     bool connectNats();
     void disConnectNats();
     void setDisPlay();
     void getOrgId(QMap<int, QString> &OrgId);
     void getOrgAreaId(QMap<int, QString> &OrgId);
+    void getHost(QVector<QString> &Host);
+    void setHost(QVector<QString> &Host);
+    void setPath(QString sCmdPath);
+    void getPath(QString &sCmdPath);
 
-  signals:
+signals:
 
-  public slots:
+public slots:
     void onQuery();
     void onReSet();
     void onClear();
