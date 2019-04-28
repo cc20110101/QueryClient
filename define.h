@@ -34,6 +34,7 @@ class Global {
 #define User_Indep_Flow_Init         13
 #define User_Balance_Display         14
 #define Host_Cmd_Display             15
+#define User_Offer_Remind_Display    16
 
 // 图标动画
 #define ICON_36                    ":/resources/tray.ico"

@@ -5,6 +5,7 @@ IndepInfoTabWidget::IndepInfoTabWidget(QWidget *parent) :
     userMemInfo = new UserInfoDisplay(User_Data_Display);
     userIndepBalanInfo = new UserInfoDisplay(User_Indep_Balance_Display);
     userAccuInfo = new UserInfoDisplay(User_Accu_Display);
+    userOfferAccuInfo = new UserInfoDisplay(User_Offer_Remind_Display);
     userAccuCombineInfo = new UserInfoDisplay(User_Accu_Combine_Display);
     userAcctMakeInfo = new UserInfoDisplay(User_Acct_Make_Display);
     userOrderInfo = new UserInfoDisplay(User_Order_Display);
@@ -18,6 +19,7 @@ IndepInfoTabWidget::IndepInfoTabWidget(QWidget *parent) :
     addTab(userAccuInfo, "用户累积量信息");
     addTab(userBalanInfo, "用户余额信息");
     addTab(userIndepBalanInfo, "用户信控余额信息");
+    addTab(userOfferAccuInfo, "用户套餐提醒信息");
     addTab(userAccuCombineInfo, "用户累积量合并组信息");
     addTab(userAccuOutNetInfo, "用户断网累积量信息");
     addTab(userAcctMakeInfo, "用户账务触发信息");
