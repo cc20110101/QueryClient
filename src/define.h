@@ -16,7 +16,7 @@ class Global {
 };
 
 // 定义字符串
-#define WindowTitle             "广东计费查询工具"
+#define WindowTitle             "查询工具"
 #define IniFileName             "conf.ini"
 
 #define User_Accu_Display            1
